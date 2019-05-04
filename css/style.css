@@ -1,0 +1,129 @@
+body {
+  font-family: sans-serif;
+  background: #bdc3c7;
+  color: #ecf0f1;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  max-width: 400px;
+  width: 100%;
+}
+
+.rounds-box {
+  margin: 30px 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #34495e;
+  border-radius: 20px;
+}
+.rounds-box p {
+  margin: 0;
+}
+.rounds-box p:nth-child(2) {
+  margin: 10px 0 0;
+  font-size: 30px;
+}
+
+.output {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: #34495e;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+.result-wrapper {
+  text-align: center;
+  background: #95a5a6;
+  min-width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.result-wrapper p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.result-box {
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+.buttons {
+  text-align: center;
+}
+.buttons__action {
+  margin: 40px 0;
+}
+.buttons__cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttons .btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .4s;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  opacity: .7;
+}
+.buttons .btn__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 40px;
+  margin: 0 10px;
+}
+.buttons .btn__icon--paper {
+  background: #1abc9c;
+}
+.buttons .btn__icon--rock {
+  background: #34495e;
+}
+.buttons .btn__icon--scissors {
+  background: #3498db;
+}
+.buttons .btn--new, .buttons .btn--reset {
+  color: #ecf0f1;
+  width: 200px;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 20px;
+  border-radius: 50px;
+}
+.buttons .btn--new {
+  background: #2ecc71;
+}
+.buttons .btn--reset {
+  background: #e74c3c;
+}
+.buttons .btn:hover {
+  opacity: 1;
+}
+.buttons .btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
