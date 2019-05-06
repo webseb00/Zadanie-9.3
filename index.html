@@ -1,64 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Zadanie 9.3</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+    <link rel="stylesheet" href="css/style.css">  
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Zadanie 8.4</title>
-  
-  
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+  <body>
 
-      <link rel="stylesheet" href="css/style.css">
-
-  
-</head>
-
-<body>
-
-  <div class="container">
-  <div class="main">
-    <div class="rounds-box">
-      <p>Rounds to finish the game:</p>
-      <p id="rounds-output">0</p>
-    </div>
-    <div id="info-output" class="output">&nbsp;</div>
-    <div class="result">
-      <div class="result-wrapper">
-        <p>Gracz</p>
-        <div id="player" class="result-box">0</div>
-      </div>
-      <div class="result-wrapper">
-        <p>Komputer</p>
-        <div id="comp" class="result-box">0</div>
-      </div>
-    </div>
-    <div class="buttons">
-      <div class="buttons__action">
-        <button id="btn-1" class="btn btn__icon btn__icon--paper" title="Paper">
-          <i class="far fa-hand-paper"></i>
-        </button>
-        <button id="btn-2" class="btn btn__icon btn__icon--rock" title="Rock">
-          <i class="far fa-hand-rock"></i>
-        </button>
-        <button id="btn-3" class="btn btn__icon btn__icon--scissors" title="Scissors">
-          <i class="far fa-hand-scissors"></i>
-        </button>
-      </div>
-      <div class="buttons__cta">
-        <button id="newGame" class="btn btn--new">New Game</button>
-        <button id="resetGame" class="btn btn--reset">Reset</button>
+    <div class="container">
+      <div class="main">
+        <div class="rounds-box">
+          <p>Rounds to finish the game:</p>
+          <p id="rounds-output">0</p>
+        </div>
+        <div id="info-output" class="output">&nbsp;</div>
+        <div class="result">
+          <div class="result-wrapper">
+            <p id="player-name">Gracz</p>
+            <div id="player" class="result-box">0</div>
+          </div>
+          <div class="result-wrapper">
+            <p>Komputer</p>
+            <div id="comp" class="result-box">0</div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="buttons__action">
+            <button class="btn btn__icon btn__icon--paper player-move" title="Paper" data-move="Paper">
+              <i class="far fa-hand-paper"></i>
+            </button>
+            <button class="btn btn__icon btn__icon--rock player-move" title="Rock" data-move="Rock">
+              <i class="far fa-hand-rock"></i>
+            </button>
+            <button class="btn btn__icon btn__icon--scissors player-move" title="Scissors" data-move="Scissors">
+              <i class="far fa-hand-scissors"></i>
+            </button>
+          </div>
+          <div class="buttons__cta">
+            <button id="newGame" class="btn btn--new">New Game</button>
+            <button id="resetGame" class="btn btn--reset">Reset</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-  
-  
 
-    <script  src="js/index.js"></script>
+    <!-- MODAL BOXES -->
 
+    <div class="modal" id="modal-winner">
+      <a href="#" id="close_modal" class="modal__close">X</a>
+      <div class="modal__content">
+        <div id="winner-output" class="winner">&nbsp;</div>
+      </div>
+    </div>
 
+    <div class="modal" id="modal-start">
+      <a href="#" id="close_modal" class="modal__close">X</a>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Player name" id="inputP" class="input input--player">
+        <input type="number" placeholder="Choose number of rounds" id="inputR" class="input input--rounds" min="1" max="99">
+        <div class="buttons">
+          <button type="button" class="btn btn--start" id="startGame">Start</button>
+        </div>
+      </div>
+    </div>
 
+    <!-- DARK OVERLAY -->
+    <div class="overlay"></div>
+    
+    <!-- JS FILES -->
+    <script  src="js/script.js"></script>
 
-</body>
-
+  </body>
 </html>
