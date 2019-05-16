@@ -33,11 +33,11 @@
         playerMove = this.getAttribute('data-move');
         if(params.stopGame === 1) {
           if(playerMove === 'Paper') {
-            checkResult('Paper');
+            checkResult(playerMove);
           } else if (playerMove === 'Rock') {
-            checkResult('Rock');
+            checkResult(playerMove);
           } else if (playerMove === 'Scissors'){
-            checkResult('Scissors');
+            checkResult(playerMove);
           }
         }
       });
