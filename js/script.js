@@ -15,28 +15,28 @@
       winner = document.querySelector('#winner-output'),
       overlay = document.querySelector('.overlay'),
       inputPlayer,
-      inputRounds;
+      inputRounds,
+      playerMove,
+      computerMove;
   
   var params = {
     playerName: 'Gracz',
     playerWins: 0,
     computerWins: 0,
     roundsToWin: 0,
-    stopGame: null,
-    computerMove: null,
-    playerMove: null
+    stopGame: null
   };
   
   // Loop through all player buttons, and getAttribute data of clicked button
   for(var i=0;i<playerButtons.length;i++) {
       playerButtons[i].addEventListener('click', function() {
-        params.playerMove = this.getAttribute('data-move');
+        playerMove = this.getAttribute('data-move');
         if(params.stopGame === 1) {
-          if(params.playerMove === 'Paper') {
+          if(playerMove === 'Paper') {
             checkResult('Paper');
-          } else if (params.playerMove === 'Rock') {
+          } else if (playerMove === 'Rock') {
             checkResult('Rock');
-          } else if (params.playerMove === 'Scissors'){
+          } else if (playerMove === 'Scissors'){
             checkResult('Scissors');
           }
         }
@@ -116,33 +116,33 @@
       showModal('compWin');
       params.stopGame = 0;
     } else {
-      playerMove();
+      gamerMove();
     }
     
   }
   
-  function playerMove() {
+  function gamerMove() {
     function number() {
       // Attach number to variable 
       var randomNumber = Math.floor((Math.random() * 3) + 1);  
       
       if(randomNumber === 1) {
-        params.computerMove = 'Paper';
+        computerMove = 'Paper';
       } else if (randomNumber === 2) {
-        params.computerMove = 'Rock';
+        computerMove = 'Rock';
       } else if (randomNumber === 3) {
-        params.computerMove = 'Scissors';
+        computerMove = 'Scissors';
       }
     };
     
     number();
     
     if(params.stopGame === 1) {
-      if(params.computerMove === params.playerMove) {
+      if(computerMove === playerMove) {
         displayMsg('draw');
-      } else if ((params.computerMove === 'Paper' && params.playerMove === 'Rock') || 
-                (params.computerMove === 'Rock' && params.playerMove === 'Scissors') || 
-                (params.computerMove === 'Scissors' && params.playerMove === 'Paper')) 
+      } else if ((computerMove === 'Paper' && playerMove === 'Rock') || 
+                (computerMove === 'Rock' && playerMove === 'Scissors') || 
+                (computerMove === 'Scissors' && playerMove === 'Paper')) 
       {
         displayMsg('compWin');
         params.computerWins++;
